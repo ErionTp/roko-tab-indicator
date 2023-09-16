@@ -14,11 +14,12 @@ type Props = ViewProps & {
 
 const Tab = ({ option, onPress, index, totalTabs, ...rest }: Props) => {
   // #region HOOKS
-  const { options, scrollX, theme } = useMainContext();
+  const { scrollX, theme, fontStyle } = useMainContext();
   // #endregion
   // #region MEMO
   const themedStyle = useMemo(() => styles(theme), [theme]);
   // #endregion
+  // #region MEMBERS
   const inputRange = [...Array(totalTabs).keys()].map(
     (i) => i * Layout.window.width
   );
@@ -31,6 +32,7 @@ const Tab = ({ option, onPress, index, totalTabs, ...rest }: Props) => {
   });
 
   const key = useMemo(() => `${index}-${scrollX}`, [index, scrollX]);
+  // #endregion
 
   return (
     <TouchableOpacity
@@ -40,9 +42,7 @@ const Tab = ({ option, onPress, index, totalTabs, ...rest }: Props) => {
       style={themedStyle.root}
       onPress={onPress}
     >
-      <Animated.Text style={{ color, fontSize: 84 / options.length }}>
-        {option}
-      </Animated.Text>
+      <Animated.Text style={[fontStyle, { color }]}>{option}</Animated.Text>
     </TouchableOpacity>
   );
 };

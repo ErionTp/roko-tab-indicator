@@ -50,6 +50,7 @@ const App = ({}) => {
               background: 'transparent',
               onBackground: 'black',
             },
+            fontStyle: { fontSize: 18, textTransform: 'uppercase' },
           }}
         />
       </View>

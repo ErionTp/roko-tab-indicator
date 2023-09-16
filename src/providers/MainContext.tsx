@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useMemo } from 'react';
-import { Animated } from 'react-native';
+import { Animated, type TextStyle } from 'react-native';
 import type { Theme } from 'src/types/Theme';
 
 interface IContext {
@@ -7,6 +7,7 @@ interface IContext {
   onItemPress: (value: number) => void;
   scrollX: Animated.Value;
   theme: Theme;
+  fontStyle?: TextStyle;
 }
 
 const Context = createContext<IContext>({
@@ -21,6 +22,7 @@ const Context = createContext<IContext>({
     background: '',
     onBackground: '',
   },
+  fontStyle: undefined,
 });
 
 export interface IMainContextProps {
@@ -29,6 +31,7 @@ export interface IMainContextProps {
   onItemPress: (value: number) => void;
   scrollX: Animated.Value;
   theme?: Theme;
+  fontStyle?: TextStyle;
 }
 
 export const MainContext = ({
@@ -42,10 +45,11 @@ export const MainContext = ({
     background: 'transparent',
     onBackground: 'black',
   },
+  fontStyle,
 }: IMainContextProps) => {
   const memoValue = useMemo(
-    () => ({ options, onItemPress, scrollX, theme }),
-    [onItemPress, options, scrollX, theme]
+    () => ({ options, onItemPress, scrollX, theme, fontStyle }),
+    [onItemPress, options, scrollX, theme, fontStyle]
   );
 
   return <Context.Provider value={memoValue}>{children}</Context.Provider>;
