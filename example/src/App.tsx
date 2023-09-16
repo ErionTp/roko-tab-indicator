@@ -1,7 +1,8 @@
 import { Animated, Dimensions, Image, StyleSheet, View } from 'react-native';
 import React, { useCallback, useRef } from 'react';
 import DummyList from './data/DummyList';
-import { GroupButton } from 'roko-tab-indicator';
+import { TabIndicator } from 'roko-tab-indicator';
+
 const options = ['Kroni', 'eshte', 'djale i mire'];
 
 const { width, height } = Dimensions.get('screen');
@@ -38,7 +39,7 @@ const App = ({}) => {
         )}
       />
       <View style={styles.tabContainer}>
-        <GroupButton
+        <TabIndicator
           {...{
             options,
             onItemPress,

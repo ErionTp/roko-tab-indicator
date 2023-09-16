@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainContext } from './../providers/MainContext';
+import { MainContext } from '../providers/MainContext';
 import Tabs from './Tabs';
 import type { Animated } from 'react-native';
 import type { Theme } from 'src/types/Theme';
@@ -10,7 +10,7 @@ type Props = {
   scrollX: Animated.Value;
   theme?: Theme;
 };
-const GroupButton: React.FC<Props> = (props: Props) => {
+const TabIndicator: React.FC<Props> = (props: Props) => {
   // #region STATES
   // #endregion
   // #region CUSTOM HOOKS
@@ -28,8 +28,6 @@ const GroupButton: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default GroupButton;
+export default TabIndicator;
 
-GroupButton.displayName = 'GroupButton';
-
-// const styles = StyleSheet.create({ root: {} });
+TabIndicator.displayName = 'TabIndicator';

@@ -1,3 +1,3 @@
-import GroupButton from './components/GroupButton';
+import TabIndicator from './components/TabIndicator';
 
-export { GroupButton };
+export { TabIndicator };
