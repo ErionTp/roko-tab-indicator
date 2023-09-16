@@ -1,7 +1,7 @@
 {
-  "name": "roko-group-buttons",
-  "version": "0.1.0",
-  "description": "Simple animated group button",
+  "name": "roko-tab-indicator",
+  "version": "0.0.1",
+  "description": "Simple animated tab indicator",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -40,13 +40,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/ErionTp/roko-group-buttons",
+  "repository": "https://github.com/ErionTp/roko-tab-indicator",
   "author": "Erjon Kelleci <kelleci.erion@gmail.com> (https://github.com/ErionTp)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ErionTp/roko-group-buttons/issues"
+    "url": "https://github.com/ErionTp/roko-tab-indicator/issues"
   },
-  "homepage": "https://github.com/ErionTp/roko-group-buttons#readme",
+  "homepage": "https://github.com/ErionTp/roko-tab-indicator#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -155,5 +155,6 @@
         }
       ]
     ]
-  }
+  },
+  "dependencies": {}
 }

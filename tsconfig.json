@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "roko-group-buttons": ["./src/index"]
+      "roko-tab-indicator": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
