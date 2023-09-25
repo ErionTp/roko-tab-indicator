@@ -11,6 +11,7 @@ type Props = {
   scrollX: Animated.Value;
   theme?: Theme;
   fontStyle?: TextStyle;
+  mode?: 'contained' | 'underline';
 };
 const TabIndicator: React.FC<Props> = (props: Props) => {
   // #region STATES

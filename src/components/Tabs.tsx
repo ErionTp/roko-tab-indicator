@@ -29,10 +29,6 @@ const Tabs: React.FC<Props> = () => {
   // #endregion
   return (
     <View style={styles.root}>
-      {measurements.length === options.length && (
-        <Indicator {...{ measures: measurements }} />
-      )}
-
       <View style={styles.container}>
         {options.map((option, index) => {
           return (
@@ -52,6 +48,10 @@ const Tabs: React.FC<Props> = () => {
           );
         })}
       </View>
+
+      {measurements.length === options.length && (
+        <Indicator {...{ measures: measurements }} />
+      )}
     </View>
   );
 };
@@ -67,5 +67,6 @@ const styles = StyleSheet.create({
     gap: Spacing.regular,
     flexDirection: 'row',
     flexWrap: 'wrap',
+    zIndex: 1,
   },
 });

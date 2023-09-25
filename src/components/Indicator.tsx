@@ -17,18 +17,41 @@ const { width } = Dimensions.get('screen');
 
 const Indicator: React.FC<Props> = ({ measures }) => {
   // #region HOOKS
-  const { options, scrollX, theme } = useMainContext();
+  const { options, scrollX, theme, mode } = useMainContext();
   // #endregion
   // #region MEMO
-  const themedStyle = useMemo(() => styles(theme), [theme]);
+  const themedStyle = useMemo(() => styles(theme, measures), [theme, measures]);
   // #endregion
+  // #region MEMBERS
+
+  const additionalSpacing = () => {
+    switch (mode) {
+      case 'contained':
+        return {
+          width: Spacing.regular,
+          x: Spacing.compact,
+          y: Spacing.petite,
+        };
+      default:
+        return {
+          width: 0,
+          x: 0,
+          y: 0,
+        };
+    }
+  };
   const inputRange = options.map((_, i) => i * width);
   const outputWidthRange = measures.map(
-    (measure) => measure.width + Spacing.large
+    (measure) => measure.width + additionalSpacing().width
   );
-  const outputXRange = measures.map((measure) => measure.x - Spacing.compact);
-  const outputYRange = measures.map((measure) => measure.y - Spacing.petite);
-
+  const outputXRange = measures.map(
+    (measure) => measure.x - additionalSpacing().x
+  );
+  const outputYRange = measures.map(
+    (measure) => measure.y - additionalSpacing().y
+  );
+  // #endregion
+  // #region ANIMATION
   const indicatorWidth = scrollX.interpolate({
     inputRange,
     outputRange: outputWidthRange,
@@ -44,14 +67,16 @@ const Indicator: React.FC<Props> = ({ measures }) => {
     outputRange: outputYRange,
     extrapolate: 'clamp',
   });
+  // #endregion
 
   return (
     <Animated.View
       style={[
         themedStyle.root,
+        mode === 'contained'
+          ? themedStyle.containedRoot
+          : themedStyle.underlineRoot,
         {
-          height: measures[0]?.height! + Spacing.medium,
-          borderRadius: (measures[0]?.height! + 16) / 2,
           width: indicatorWidth,
           transform: [{ translateX }, { translateY }],
         },
@@ -64,10 +89,16 @@ export default Indicator;
 
 Indicator.displayName = 'Indicator';
 
-const styles = (theme: Theme) =>
+const styles = (theme: Theme, measures: LayoutRectangle[]) =>
   StyleSheet.create({
-    root: {
+    root: { backgroundColor: theme.primary },
+    containedRoot: {
       position: 'absolute',
-      backgroundColor: theme.primary,
+      height: measures[0]?.height! + Spacing.medium,
+      borderRadius: (measures[0]?.height! + 16) / 2,
+    },
+    underlineRoot: {
+      height: Spacing.petite,
+      borderRadius: Spacing.tiny,
     },
   });
