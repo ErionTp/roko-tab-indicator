@@ -1,9 +1,5 @@
-import {
-  StyleSheet,
-  type LayoutRectangle,
-  Dimensions,
-  Animated,
-} from 'react-native';
+import { StyleSheet, Dimensions, Animated } from 'react-native';
+import { LayoutRectangle } from 'react-native';
 import React, { useMemo } from 'react';
 import Spacing from './../constants/layout/Spacing';
 import useMainContext from './../providers/MainContext';

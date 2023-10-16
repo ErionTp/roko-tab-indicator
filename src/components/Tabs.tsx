@@ -1,4 +1,5 @@
-import { StyleSheet, View, type LayoutRectangle } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { LayoutRectangle } from 'react-native';
 import React, { useCallback, useRef, useState } from 'react';
 import Tab from './Tab';
 import Indicator from './Indicator';

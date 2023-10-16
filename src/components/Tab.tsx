@@ -1,4 +1,5 @@
-import { StyleSheet, TouchableOpacity, type ViewProps } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import type { ViewProps } from 'react-native';
 import React, { useMemo } from 'react';
 import { Animated } from 'react-native';
 import Layout from './../constants/layout/Layout';
