@@ -56,7 +56,6 @@ export const MainContext = ({
     () => ({ options, onItemPress, scrollX, theme, fontStyle, mode }),
     [onItemPress, options, scrollX, theme, fontStyle, mode]
   );
-
   return <Context.Provider value={memoValue}>{children}</Context.Provider>;
 };
 
