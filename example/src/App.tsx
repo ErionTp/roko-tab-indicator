@@ -3,7 +3,13 @@ import React, { useCallback, useRef } from 'react';
 import DummyList from './data/DummyList';
 import { TabIndicator } from 'roko-tab-indicator';
 
-const options = ['Kroni', 'eshte', 'djale i mire'];
+const options = [
+  'Kroni',
+  'eshte',
+  'djale i mire',
+  'dhe babi me mamin',
+  'e do shume',
+];
 
 const { width, height } = Dimensions.get('screen');
 
@@ -13,7 +19,7 @@ const App = ({}) => {
   const listRef = useRef<Animated.FlatList<string> | null>(null);
   // #endregion
   // #region FUNCTIONS
-  const onItemPress = useCallback((index) => {
+  const onItemPress = useCallback((index: number) => {
     listRef.current?.scrollToOffset({ offset: index * width, animated: true });
   }, []);
   // #endregion
@@ -51,6 +57,7 @@ const App = ({}) => {
               onBackground: 'black',
             },
             fontStyle: { fontSize: 18, textTransform: 'uppercase' },
+            mode: 'underline',
           }}
         />
       </View>

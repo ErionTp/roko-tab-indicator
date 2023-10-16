@@ -1,12 +1,12 @@
 {
   "name": "roko-tab-indicator",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Simple animated tab indicator",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
-  "react-native": "src/index",
-  "source": "src/index",
+  "react-native": "lib/commonjs/index",
+  "source": "lib/commonjs/index",
   "files": [
     "lib",
     "android",
