@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useMemo } from 'react';
-import { Animated, type TextStyle } from 'react-native';
-import type { Theme } from 'src/types/Theme';
+import { Animated } from 'react-native';
+import { TextStyle } from 'react-native';
+import { Theme } from 'src/types/Theme';
 
 interface IContext {
   options: string[];

@@ -15,7 +15,7 @@ type Props = {
 
 const { width } = Dimensions.get('screen');
 
-const Indicator: React.FC<Props> = ({ measures }) => {
+const Indicator = ({ measures }: Props): JSX.Element => {
   // #region HOOKS
   const { options, scrollX, theme, mode } = useMainContext();
   // #endregion
@@ -23,7 +23,6 @@ const Indicator: React.FC<Props> = ({ measures }) => {
   const themedStyle = useMemo(() => styles(theme, measures), [theme, measures]);
   // #endregion
   // #region MEMBERS
-
   const additionalSpacing = () => {
     switch (mode) {
       case 'contained':
@@ -36,7 +35,7 @@ const Indicator: React.FC<Props> = ({ measures }) => {
         return {
           width: 0,
           x: 0,
-          y: 0,
+          y: -measures[0]?.height!,
         };
     }
   };
@@ -98,6 +97,7 @@ const styles = (theme: Theme, measures: LayoutRectangle[]) =>
       borderRadius: (measures[0]?.height! + 16) / 2,
     },
     underlineRoot: {
+      position: 'absolute',
       height: Spacing.petite,
       borderRadius: Spacing.tiny,
     },

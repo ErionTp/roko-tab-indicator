@@ -12,7 +12,13 @@ type Props = ViewProps & {
   totalTabs: number; // Total number of tabs
 };
 
-const Tab = ({ option, onPress, index, totalTabs, ...rest }: Props) => {
+const Tab = ({
+  option,
+  onPress,
+  index,
+  totalTabs,
+  ...rest
+}: Props): JSX.Element => {
   // #region HOOKS
   const { scrollX, theme, fontStyle } = useMainContext();
   // #endregion

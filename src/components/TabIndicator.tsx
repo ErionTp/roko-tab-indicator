@@ -13,7 +13,7 @@ type Props = {
   fontStyle?: TextStyle;
   mode?: 'contained' | 'underline';
 };
-const TabIndicator: React.FC<Props> = (props: Props) => {
+const TabIndicator = (props: Props): JSX.Element => {
   // #region STATES
   // #endregion
   // #region CUSTOM HOOKS

@@ -5,8 +5,7 @@ import Indicator from './Indicator';
 import Spacing from './../constants/layout/Spacing';
 import useMainContext from './../providers/MainContext';
 
-type Props = {};
-const Tabs: React.FC<Props> = () => {
+const Tabs = (): JSX.Element => {
   // #region HOOKS
   const { options, onItemPress } = useMainContext();
   // #endregion
