@@ -15,7 +15,6 @@ const TabList: FC<Props> = ({}) => {
   // #endregion
   // #region Members
   const { options, onItemPress, scrollX } = useMainContext();
-  console.log(scrollX);
   // #endregion
   // #region References
   const measurementsRef = useRef<LayoutRectangle[]>(
@@ -68,10 +67,6 @@ const TabList: FC<Props> = ({}) => {
     onItemPress(index);
   };
 
-  // #endregion
-  // #region Effects
-  // #endregion
-  // #region Variables
   // #endregion
   return (
     <View style={styles.root}>

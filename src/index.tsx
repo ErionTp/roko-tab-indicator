@@ -1,3 +1,4 @@
-import TabIndicator from './components/TabIndicator';
+import TabIndicator from './components';
+import { Theme } from './types/t.Theme';
 
-export { TabIndicator };
+export { TabIndicator, Theme };

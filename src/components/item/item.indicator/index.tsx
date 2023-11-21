@@ -10,8 +10,7 @@ type Props = {
 };
 const IndicatorItem: FC<Props> = ({ measurements }) => {
   // #region Members
-  const { options, scrollX, theme } = useMainContext();
-
+  const { options, scrollX, theme, mode } = useMainContext();
   const inputRange = options.map((_, i) => i * Layout.window.width);
   const outputWidthRange = measurements.map((measure) => measure.width);
   const outputXRange = measurements.map((measure) => measure.x);
@@ -32,18 +31,16 @@ const IndicatorItem: FC<Props> = ({ measurements }) => {
     extrapolate: 'clamp',
   });
   // #endregion
-  // #region Functions
-  // #endregion
-  // #region Effects
-  // #endregion
   // #region Variables
   const themedStyle = styles(theme, measurements);
-
   // #endregion
   return (
     <Animated.View
       style={[
         themedStyle.root,
+        mode === 'underline'
+          ? themedStyle.underlineRoot
+          : themedStyle.containedRoot,
         { width, transform: [{ translateX }, { translateY }] },
       ]}
     />
@@ -57,9 +54,17 @@ IndicatorItem.displayName = 'IndicatorItem';
 const styles = (theme: Theme, measurements: LayoutRectangle[]) =>
   StyleSheet.create({
     root: {
-      position: 'absolute',
       backgroundColor: theme.primary,
-      height: measurements[0]?.height!,
-      borderRadius: Spacing.regular,
+    },
+    containedRoot: {
+      position: 'absolute',
+      height: measurements[0]?.height,
+      borderRadius: (measurements[0]?.height! + 16) / 2,
+    },
+    underlineRoot: {
+      position: 'absolute',
+      height: Spacing.petite,
+      borderRadius: Spacing.tiny,
+      bottom: 0,
     },
   });

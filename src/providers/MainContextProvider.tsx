@@ -24,7 +24,8 @@ export type IMainContextProviderProps = ContextType & {
 
 export const MainContextProvider = (props: IMainContextProviderProps) => {
   // #region Props
-  const { children, options, onItemPress, scrollX, theme, fontStyle } = props;
+  const { children, options, onItemPress, scrollX, theme, fontStyle, mode } =
+    props;
   // #endregion
   // #region Variables
   const memoValue: ContextType = useMemo(
@@ -34,8 +35,9 @@ export const MainContextProvider = (props: IMainContextProviderProps) => {
       scrollX,
       theme,
       fontStyle,
+      mode,
     }),
-    [options, onItemPress, scrollX, theme, fontStyle]
+    [options, onItemPress, scrollX, theme, fontStyle, mode]
   );
   // #endregion
 

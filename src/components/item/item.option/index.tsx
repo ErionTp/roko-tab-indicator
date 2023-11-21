@@ -22,7 +22,7 @@ OptionItem.displayName = 'OptionItem';
 const styles = StyleSheet.create({
   container: {},
   root: {
-    paddingHorizontal: Spacing.compact,
-    paddingVertical: Spacing.tiny,
+    padding: Spacing.compact,
+    paddingVertical: Spacing.petite,
   },
 });

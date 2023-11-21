@@ -4039,9 +4039,9 @@ __metadata:
   linkType: hard
 
 "big-integer@npm:^1.6.44":
-  version: 1.6.51
-  resolution: "big-integer@npm:1.6.51"
-  checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
+  version: 1.6.52
+  resolution: "big-integer@npm:1.6.52"
+  checksum: 6e86885787a20fed96521958ae9086960e4e4b5e74d04f3ef7513d4d0ad631a9f3bde2730fc8aaa4b00419fc865f6ec573e5320234531ef37505da7da192c40b
   languageName: node
   linkType: hard
 
@@ -5412,9 +5412,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.535":
-  version: 1.4.589
-  resolution: "electron-to-chromium@npm:1.4.589"
-  checksum: 64639fe45950cadc8adf90d3d2d101d3d68431fc41a16b33be3a7ee00ba0d6c335770df862d210311fc7eb9752356966ae67f1b9e9442cf99e5b2667f706bf4b
+  version: 1.4.590
+  resolution: "electron-to-chromium@npm:1.4.590"
+  checksum: 3165a64819ad385e4c732004ceebd9ed2115cbc0e1e311dbfb36cb2809541ab7ea12e58cd1a55a290896a634c58c1a71eeaac203c228aa31e2ec385cdc6b82ee
   languageName: node
   linkType: hard
 
@@ -11405,7 +11405,7 @@ __metadata:
     react-native: 0.72.4
     react-native-builder-bob: ^0.20.0
     release-it: ^15.0.0
-    typescript: latest
+    typescript: ^5.1.3
   peerDependencies:
     react: "*"
     react-native: "*"
@@ -12563,7 +12563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.4 || ^5.2.2, typescript@npm:latest":
+"typescript@npm:^4.6.4 || ^5.2.2, typescript@npm:^5.1.3":
   version: 5.3.2
   resolution: "typescript@npm:5.3.2"
   bin:
@@ -12573,7 +12573,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.4 || ^5.2.2#~builtin<compat/typescript>, typescript@patch:typescript@latest#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.6.4 || ^5.2.2#~builtin<compat/typescript>, typescript@patch:typescript@^5.1.3#~builtin<compat/typescript>":
   version: 5.3.2
   resolution: "typescript@patch:typescript@npm%3A5.3.2#~builtin<compat/typescript>::version=5.3.2&hash=29ae49"
   bin:

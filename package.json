@@ -1,6 +1,6 @@
 {
   "name": "roko-tab-indicator",
-  "version": "0.8.0",
+  "version": "0.5.1",
   "description": "Simple animated tab indicator",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -69,7 +69,7 @@
     "react-native": "0.72.4",
     "react-native-builder-bob": "^0.20.0",
     "release-it": "^15.0.0",
-    "typescript": "latest"
+    "typescript": "^5.1.3"
   },
   "peerDependencies": {
     "react": "*",
