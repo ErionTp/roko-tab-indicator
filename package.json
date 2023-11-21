@@ -39,7 +39,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/ErionTp/roko-tab-indicator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErionTp/roko-tab-indicator.git"
+  },
   "author": "Erjon Kelleci <kelleci.erion@gmail.com> (https://github.com/ErionTp)",
   "license": "MIT",
   "bugs": {
