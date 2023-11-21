@@ -3,8 +3,8 @@ import type { ViewProps } from 'react-native';
 import React, { useMemo } from 'react';
 import { Animated } from 'react-native';
 import Layout from './../constants/layout/Layout';
-import useMainContext from './../providers/MainContext';
-import type { Theme } from 'src/types/Theme';
+import useMainContext from '../providers/MainContextProvider';
+import type { Theme } from 'src/types/t.Theme';
 
 type Props = ViewProps & {
   option: string;

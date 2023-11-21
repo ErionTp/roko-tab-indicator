@@ -2,8 +2,8 @@ import { StyleSheet, Dimensions, Animated } from 'react-native';
 import { LayoutRectangle } from 'react-native';
 import React, { useMemo } from 'react';
 import Spacing from './../constants/layout/Spacing';
-import useMainContext from './../providers/MainContext';
-import type { Theme } from 'src/types/Theme';
+import useMainContext from '../providers/MainContextProvider';
+import type { Theme } from 'src/types/t.Theme';
 
 type Props = {
   measures: LayoutRectangle[];

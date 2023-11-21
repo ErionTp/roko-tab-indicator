@@ -1,19 +1,9 @@
 import React from 'react';
-import { MainContext } from '../providers/MainContext';
-import Tabs from './Tabs';
-import type { Animated } from 'react-native';
-import type { Theme } from 'src/types/Theme';
-import type { TextStyle } from 'react-native';
+import { ContextType } from 'src/types/t.Context';
+import TabList from './list.tab';
+import { MainContextProvider } from '../providers/MainContextProvider';
 
-type Props = {
-  options: string[];
-  onItemPress: (value: number) => void;
-  scrollX: Animated.Value;
-  theme?: Theme;
-  fontStyle?: TextStyle;
-  mode?: 'contained' | 'underline';
-};
-const TabIndicator = (props: Props): JSX.Element => {
+const TabIndicator = (props: ContextType): JSX.Element => {
   // #region STATES
   // #endregion
   // #region CUSTOM HOOKS
@@ -25,9 +15,9 @@ const TabIndicator = (props: Props): JSX.Element => {
   // #region MEMBERS
   // #endregion
   return (
-    <MainContext {...props}>
-      <Tabs />
-    </MainContext>
+    <MainContextProvider {...props}>
+      <TabList />
+    </MainContextProvider>
   );
 };
 

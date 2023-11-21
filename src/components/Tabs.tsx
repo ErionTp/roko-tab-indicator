@@ -4,7 +4,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import Tab from './Tab';
 import Indicator from './Indicator';
 import Spacing from './../constants/layout/Spacing';
-import useMainContext from './../providers/MainContext';
+import useMainContext from '../providers/MainContextProvider';
 import { ScrollView } from 'react-native';
 
 const { width } = Dimensions.get('screen');
@@ -42,7 +42,7 @@ const Tabs = (): JSX.Element => {
     if (itemLayout) {
       const itemOffset = measurements
         .slice(0, index)
-        .reduce((acc, layout) => acc + layout.width + Spacing.regular, 0);
+        .reduce((acc, layout) => acc + layout.width, 0);
       const scrollTo = itemOffset + itemLayout.width / 2 - width / 2;
       reference.scrollTo({ x: scrollTo, animated: true });
     }
