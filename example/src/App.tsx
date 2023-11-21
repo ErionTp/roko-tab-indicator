@@ -1,8 +1,7 @@
 import { Animated, Dimensions, Image, StyleSheet, View } from 'react-native';
 import React, { useCallback, useRef } from 'react';
 import DummyList from './data/DummyList';
-import { TabIndicator } from 'roko-tab-indicator';
-
+import { TabIndicator } from '../../src/index';
 const options = [
   'Kroni',
   'eshte',
@@ -76,10 +75,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   tabContainer: {
-    padding: 16,
     position: 'absolute',
     top: 80,
-    start: 16,
   },
   backDrop: {
     backgroundColor: 'rgba(0,0,0, 0.3)',

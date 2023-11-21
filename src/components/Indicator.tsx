@@ -23,7 +23,7 @@ const Indicator = ({ measures }: Props): JSX.Element => {
     switch (mode) {
       case 'contained':
         return {
-          width: Spacing.regular,
+          width: Spacing.large,
           x: Spacing.compact,
           y: Spacing.petite,
         };
@@ -36,16 +36,20 @@ const Indicator = ({ measures }: Props): JSX.Element => {
     }
   };
   const inputRange = options.map((_, i) => i * width);
+
   const outputWidthRange = measures.map(
     (measure) => measure.width + additionalSpacing().width
   );
+
   const outputXRange = measures.map(
     (measure) => measure.x - additionalSpacing().x
   );
+
   const outputYRange = measures.map(
     (measure) => measure.y - additionalSpacing().y
   );
   // #endregion
+
   // #region ANIMATION
   const indicatorWidth = scrollX.interpolate({
     inputRange,
