@@ -75,7 +75,9 @@ const TabList: FC<Props> = ({}) => {
         horizontal
         showsHorizontalScrollIndicator={false}
       >
-        {measurements.length > 0 && <IndicatorItem {...{ measurements }} />}
+        {measurements.length === options.length && measurements.length > 0 && (
+          <IndicatorItem {...{ measurements }} />
+        )}
         {options?.map((option, index) => (
           <OptionItem
             onPress={() => onTabItemPress(index)}
