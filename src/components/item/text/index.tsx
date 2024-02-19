@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import useMainContext from '../../../providers/MainContextProvider';
+import useMainContext from '../../../features/providers/MainContextProvider';
 import Layout from '../../../constants/layout/Layout';
 import { Animated } from 'react-native';
 

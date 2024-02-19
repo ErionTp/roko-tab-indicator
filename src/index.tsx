@@ -1,4 +1,4 @@
 import TabIndicator from './components';
-import { Theme } from './types/t.Theme';
+import { tTheme as Theme } from './features/domain/types/t.theme';
 
 export { TabIndicator, Theme };

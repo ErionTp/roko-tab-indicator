@@ -1,7 +1,7 @@
 import { Animated, TextStyle } from 'react-native';
-import { Theme } from './t.Theme';
+import { tTheme as Theme } from './t.theme';
 
-export type ContextType = {
+export type tContext = {
   options: string[];
   onItemPress: (value: number) => void;
   scrollX: Animated.Value;

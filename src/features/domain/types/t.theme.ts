@@ -1,4 +1,4 @@
-export type Theme = {
+export type tTheme = {
   primary: string;
   onPrimary: string;
   background: string;

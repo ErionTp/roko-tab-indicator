@@ -1,7 +1,7 @@
 import { Animated, LayoutRectangle, StyleSheet } from 'react-native';
 import React, { FC } from 'react';
-import useMainContext from '../../../providers/MainContextProvider';
-import { Theme } from 'src/types/t.Theme';
+import useMainContext from '../../../features/providers/MainContextProvider';
+import { tTheme as Theme } from 'src/features/domain/types/t.theme';
 import Layout from '../../../constants/layout/Layout';
 import Spacing from '../../../constants/layout/Spacing';
 
@@ -14,7 +14,6 @@ const IndicatorItem: FC<Props> = ({ measurements }) => {
   const inputRange = options.map((_, i) => i * Layout.window.width);
   const outputWidthRange = measurements.map((measure) => measure.width);
   const outputXRange = measurements.map((measure) => measure.x);
-  const outputYRange = measurements.map((measure) => measure.y);
   // #endregion
   // #region Animations
   const width = scrollX.interpolate({
@@ -24,11 +23,6 @@ const IndicatorItem: FC<Props> = ({ measurements }) => {
   const translateX = scrollX.interpolate({
     inputRange,
     outputRange: outputXRange,
-  });
-  const translateY = scrollX.interpolate({
-    inputRange,
-    outputRange: outputYRange,
-    extrapolate: 'clamp',
   });
   // #endregion
   // #region Variables
@@ -41,7 +35,7 @@ const IndicatorItem: FC<Props> = ({ measurements }) => {
         mode === 'underline'
           ? themedStyle.underlineRoot
           : themedStyle.containedRoot,
-        { width, transform: [{ translateX }, { translateY }] },
+        { width, transform: [{ translateX }] },
       ]}
     />
   );

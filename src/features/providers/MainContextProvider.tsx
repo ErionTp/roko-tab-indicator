@@ -1,8 +1,8 @@
 import React, { ReactNode, createContext, useContext, useMemo } from 'react';
 import { Animated } from 'react-native';
-import { ContextType } from 'src/types/t.Context';
+import { tContext } from 'src/features/domain/types/t.context';
 
-const Context = createContext<ContextType>({
+const Context = createContext<tContext>({
   options: [],
   onItemPress: () => {
     console.warn('onItemPress not implemented');
@@ -18,7 +18,7 @@ const Context = createContext<ContextType>({
   mode: 'contained',
 });
 
-export type IMainContextProviderProps = ContextType & {
+export type IMainContextProviderProps = tContext & {
   children: ReactNode;
 };
 
@@ -28,7 +28,7 @@ export const MainContextProvider = (props: IMainContextProviderProps) => {
     props;
   // #endregion
   // #region Variables
-  const memoValue: ContextType = useMemo(
+  const memoValue: tContext = useMemo(
     () => ({
       options,
       onItemPress,

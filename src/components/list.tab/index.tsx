@@ -1,11 +1,12 @@
 import { LayoutRectangle, StyleSheet, View } from 'react-native';
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { ScrollView } from 'react-native';
-import useMainContext from '../../providers/MainContextProvider';
-import TextItem from '../item/item.text';
-import OptionItem from '../item/item.option';
-import IndicatorItem from '../item/item.indicator';
+import useMainContext from '../../features/providers/MainContextProvider';
+import TextItem from '../item/text';
+import ItemContainer from '../item/container';
+import IndicatorItem from '../item/indicator';
 import Layout from '../../constants/layout/Layout';
+import Spacing from '../../constants/layout/Spacing';
 
 type Props = {};
 
@@ -30,9 +31,7 @@ const TabList: FC<Props> = ({}) => {
       const index = value / Layout.window.width;
       if (!scrollRef.current) return;
       const reference = scrollRef.current;
-
       const itemLayout = measurements[index];
-
       if (itemLayout) {
         const itemOffset = measurements
           .slice(0, index)
@@ -63,33 +62,31 @@ const TabList: FC<Props> = ({}) => {
     [setMeasurements]
   );
 
-  const onTabItemPress = (index: number) => {
-    onItemPress(index);
-  };
+  const onTabItemPress = (index: number) => onItemPress(index);
 
   // #endregion
   return (
     <View style={styles.root}>
       <ScrollView
-        ref={scrollRef}
         horizontal
+        ref={scrollRef}
         showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: Spacing.regular }}
       >
         {measurements.length === options.length && measurements.length > 0 && (
           <IndicatorItem {...{ measurements }} />
         )}
         {options?.map((option, index) => (
-          <OptionItem
-            onPress={() => onTabItemPress(index)}
+          <ItemContainer
             key={index}
-            {...{ index }}
+            onPress={() => onTabItemPress(index)}
             onLayout={(e) => handleMeasure(e.nativeEvent.layout, index)}
           >
             <TextItem
               key={index}
               {...{ option, index, totalTabs: options.length }}
             />
-          </OptionItem>
+          </ItemContainer>
         ))}
       </ScrollView>
     </View>
